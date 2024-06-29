@@ -1,0 +1,2 @@
+# Routing
+Ghosty Routing Component
