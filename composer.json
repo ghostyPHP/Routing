@@ -1,0 +1,22 @@
+{
+    "name": "ghosty/routing",
+    "description": "The Ghosty Routing component maps an HTTP request to a set of configuration variables.",
+    "type": "package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ghosty\\Component\\Routing\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AnvilM",
+            "email": "211anvil112@gmail.com"
+        }
+    ],
+    "require": {
+        "ghosty/http-foundation": "^1.0",
+        "ghosty/stack": "^1.0",
+        "ghosty/bag": "^1.0"
+    }
+}
