@@ -2,25 +2,20 @@
 
 namespace Ghosty\Component\Routing\Stacks;
 
+use Ghosty\Component\Routing\Contracts\RouteContract;
 use Ghosty\Component\Routing\Contracts\Stacks\RouteStackContract;
 use Ghosty\Component\Routing\Route;
 use Ghosty\Component\Stack\AbstractStack;
 
 class RouteStack extends AbstractStack implements RouteStackContract
 {
-    public function pushRoute(Route $route): void
-    {
-        $this->push($route);
-    }
-
-    public function popRoute(): Route
-    {
-        return $this->pop();
-    }
 
 
-    public function topRoute(): Route
+    public function push(mixed $route): void
     {
-        return $this->top();
+        if (!($route instanceof RouteContract))
+        {
+            throw new \RuntimeException('Route must be type of \Ghosty\Component\Routing\Contracts\RouteContract');
+        }
     }
 }

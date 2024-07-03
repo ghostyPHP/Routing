@@ -2,14 +2,22 @@
 
 namespace Ghosty\Component\Routing\Contracts\Stacks;
 
-use Ghosty\Component\Routing\Route;
 use Ghosty\Component\Stack\Contracts\AbstractStackContract;
 
 interface RouteStackContract extends AbstractStackContract
 {
-    public function pushRoute(Route $route): void;
+    /**
+     * @param  \Ghosty\Component\Routing\Contracts\RouteContract $route
+     */
+    public function push(mixed $route): void;
 
-    public function popRoute(): Route;
+    /**
+     * @return \Ghosty\Component\Routing\Contracts\RouteContract
+     */
+    public function pop(): mixed;
 
-    public function topRoute(): Route;
+    /**
+     * @return \Ghosty\Component\Routing\Contracts\RouteContract
+     */
+    public function top(): mixed;
 }

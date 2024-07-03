@@ -33,7 +33,7 @@ class Router implements RouterContract
         {
             if (!$this->routeStack->isEmpty())
             {
-                $route = $this->routeStack->popRoute();
+                $route = $this->routeStack->pop();
                 if ($this->validate($route))
                 {
                     return $route;
