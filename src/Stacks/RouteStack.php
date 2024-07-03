@@ -11,13 +11,13 @@ class RouteStack extends AbstractStack implements RouteStackContract
 {
 
 
-    public function push(mixed $route): void
+    public function push(mixed $route): static
     {
         if (!($route instanceof RouteContract))
         {
             throw new \RuntimeException('Route must be type of \Ghosty\Component\Routing\Contracts\RouteContract');
         }
 
-        parent::push($route);
+        return parent::push($route);
     }
 }

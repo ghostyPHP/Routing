@@ -9,7 +9,7 @@ interface RouteStackContract extends AbstractStackContract
     /**
      * @param  \Ghosty\Component\Routing\Contracts\RouteContract $route
      */
-    public function push(mixed $route): void;
+    public function push(mixed $route): static;
 
     /**
      * @return \Ghosty\Component\Routing\Contracts\RouteContract
