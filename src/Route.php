@@ -2,6 +2,8 @@
 
 namespace Ghosty\Component\Routing;
 
+use Ghosty\Component\Routing\Bags\MiddlewareBag;
+use Ghosty\Component\Routing\Bags\ParameterBag;
 use Ghosty\Component\Routing\Bags\UrlBag;
 use Ghosty\Component\Routing\Contracts\Bags\MiddlewareBagContract;
 use Ghosty\Component\Routing\Contracts\Bags\ParameterBagContract;
@@ -25,7 +27,7 @@ class Route implements RouteContract
     private UrlBagContract $urlBag;
 
 
-    public function __construct(string $method, string $url, string $controller, string $action, ParameterBagContract $parameters, MiddlewareBagContract $middlewares)
+    public function __construct(string $method = "GET", string $url = "/", string $controller = "", string $action = "", ParameterBagContract $parameters = new ParameterBag(), MiddlewareBagContract $middlewares = new MiddlewareBag())
     {
         $this->setMethod($method);
         $this->setUrl($url);
