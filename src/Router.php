@@ -45,7 +45,7 @@ class Router implements RouterContract
             }
         }
 
-        throw new RouteNotFoundException($this->requestContext->getRequestUri());
+        throw new RouteNotFoundException($this->requestContext->getRequestUri(), $this->requestContext->getMethod());
     }
 
     private function validate(RouteContract $route): bool
